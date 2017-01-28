@@ -1,0 +1,14 @@
+.file{
+    float: left;width: 33%
+}
+.clearBoth{
+    clear: both;
+}
+.class{
+    border: 1px solid #c3c3c3;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.class pre{
+    padding-left: 10px;
+}
