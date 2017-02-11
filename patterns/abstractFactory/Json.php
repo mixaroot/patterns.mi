@@ -6,7 +6,7 @@ namespace patterns\abstractFactory;
  * @package patterns\abstractFactory
  * @inheritdoc
  */
-class Json  extends AbstractFiles
+class Json extends AbstractFiles
 {
     /**
      * @return array

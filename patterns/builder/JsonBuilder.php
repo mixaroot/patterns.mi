@@ -31,6 +31,7 @@ class JsonBuilder implements BuilderInterface
     {
         $this->file = new Json();
     }
+
     /**
      * @inheritdoc
      */

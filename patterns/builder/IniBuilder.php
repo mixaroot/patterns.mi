@@ -33,7 +33,7 @@ class IniBuilder implements BuilderInterface
     }
 
     /**
-     *  @inheritdoc
+     * @inheritdoc
      */
     public function setFileName()
     {
@@ -41,7 +41,7 @@ class IniBuilder implements BuilderInterface
     }
 
     /**
-     *  @inheritdoc
+     * @inheritdoc
      */
     public function setData()
     {

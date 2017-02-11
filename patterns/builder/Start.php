@@ -2,8 +2,8 @@
 
 namespace patterns\builder;
 
-use lib\Init;
 use config\Config;
+use lib\Init;
 use models\Files;
 use views\Common;
 

@@ -2,8 +2,8 @@
 
 namespace patterns\abstractFactory;
 
-use lib\Init;
 use config\Config;
+use lib\Init;
 use models\Files;
 use views\Common;
 
@@ -19,6 +19,12 @@ class Start implements Init
      */
     public function init()
     {
+
+        //TODO need example: create products with attribute
+        (new Common())->renderNotImplement();
+        return;
+
+
         // Factory for ini files
         $oFactoryIni = new IniFactory();
         $oIni = $oFactoryIni->workWithFile(Config::exampleFiles()['ini']);

@@ -2,14 +2,14 @@
 
 namespace views;
 /**
- * Common views
+ * Общее представление для всех паттернов
  * Class Common
  * @package views
  */
 class Common
 {
     /**
-     * include css js to html page
+     * подключение css и js файлво
      */
     public function __construct()
     {
@@ -17,7 +17,14 @@ class Common
     }
 
     /**
-     * Common render for few patterns
+     * Заглушка для еще не реализованных паттернов
+     */
+    public function renderNotImplement()
+    {
+        echo '<div>It have not implemented yet</div>';
+    }
+
+    /**
      * @param $title
      * @param $description
      * @param $filesForExample
@@ -26,20 +33,57 @@ class Common
      */
     public function render($title, $description, $filesForExample, $files, $classes)
     {
-        $this->renderHeader($title);
-        $this->renderDescription($description);
-        $this->renderExampleFiles($filesForExample);
-        $this->renderResultFiles($files);
-        $this->renderClasses($classes);
+        if (!empty($title)) {
+            $this->renderHeader($title);
+        }
+        if (!empty($description)) {
+            $this->renderDescription($description);
+        }
+        if (!empty($filesForExample)) {
+            $this->renderExampleFiles($filesForExample);
+        }
+        if (!empty($files)) {
+            $this->renderResultFiles($files);
+        }
+        if (!empty($classes)) {
+            $this->renderClasses($classes);
+        }
     }
 
-    public function renderResultObject($title, $description, $filesForExample, $object, $classes)
+    /**
+     * @param $title
+     * @param $description
+     * @param $filesForExample
+     * @param $object
+     * @param $classes
+     * @param array $diagrams
+     */
+    public function renderResultObject($title, $description, $plusMinus, $diagrams, $unitTests, $filesForExample, $object, $classes)
     {
-        $this->renderHeader($title);
-        $this->renderDescription($description);
-        $this->renderExampleFiles($filesForExample);
-        $this->renderObject($object);
-        $this->renderClasses($classes);
+        if (!empty($title)) {
+            $this->renderHeader($title);
+        }
+        if (!empty($description)) {
+            $this->renderDescription($description);
+        }
+        if (!empty($plusMinus)) {
+            $this->renderPlusMinus($plusMinus);
+        }
+        if (!empty($diagrams)) {
+            $this->renderDiagrams($diagrams);
+        }
+        if (!empty($unitTests)) {
+            $this->renderUnitTests($unitTests);
+        }
+        if (!empty($filesForExample)) {
+            $this->renderExampleFiles($filesForExample);
+        }
+        if (!empty($object)) {
+            $this->renderObject($object);
+        }
+        if (!empty($classes)) {
+            $this->renderClasses($classes);
+        }
     }
 
     /**
@@ -48,13 +92,12 @@ class Common
      */
     private function renderHeader($title)
     {
-        ?>
+        echo "
         <header>
-            <a href="/">Меню</a>
-
-            <h1><?= $title ?></h1>
+            <a href='/'>Меню</a>
+            <h1>$title</h1>
         </header>
-        <?
+        ";
     }
 
     /**
@@ -63,11 +106,65 @@ class Common
      */
     private function renderDescription($description)
     {
-        ?>
+        echo "
         <div>
-            <?= $description ?>
-        </div>
-        <?
+            $description
+        </div>";
+    }
+
+    /**
+     * @param $plusMinus
+     */
+    private function renderPlusMinus($plusMinus)
+    {
+        if (is_array($plusMinus) && !empty($plusMinus)) {
+            foreach ($plusMinus as $name => $values) {
+                if (is_array($values) && !empty($values)) {
+                    echo "<h3>$name</h3>";
+                    echo '<ul>';
+                    foreach ($values as $value) {
+                        echo "<li>$value</li>";
+                    }
+                    echo '</ul>';
+                }
+            }
+
+        }
+    }
+
+    /**
+     * @param $diagrams
+     */
+    private function renderDiagrams($diagrams)
+    {
+        echo "
+        <div class='clearBoth'></div>
+        <hr>
+        <h2>UML диаграммы:</h2>";
+        foreach ($diagrams as $file => $string) {
+            echo "<img src='$string'>";
+        }
+        echo "
+        </div>";
+    }
+
+    private function renderUnitTests($unitTests)
+    {
+        echo "
+        <div class='clearBoth'></div>
+        <hr>
+        <h2>Блочные тесты:</h2>
+        <div>";
+        foreach ($unitTests as $file => $string) {
+            echo '<div class="class">';
+            echo "<h3>$file</h3>";
+            echo '<pre>';
+            echo(htmlspecialchars($string));
+            echo '</pre>';
+            echo '</div>';
+        }
+        echo "
+        </div>";
     }
 
     /**
@@ -76,22 +173,20 @@ class Common
      */
     private function renderExampleFiles($filesForExample)
     {
-        ?>
+        echo "
         <hr>
         <h2>Входные файлы:</h2>
-        <div>
-            <?
-            foreach ($filesForExample as $name => $string) {
-                echo '<div class="file">';
-                echo "<h3>$name</h3>";
-                echo '<pre>';
-                echo(htmlspecialchars($string));
-                echo '</pre>';
-                echo '</div>';
-            }
-            ?>
-        </div>
-        <?
+        <div>";
+        foreach ($filesForExample as $name => $string) {
+            echo '<div class="file">';
+            echo "<h3>$name</h3>";
+            echo '<pre>';
+            echo(htmlspecialchars($string));
+            echo '</pre>';
+            echo '</div>';
+        }
+        echo "
+        </div>";
     }
 
     /**
@@ -100,46 +195,21 @@ class Common
      */
     private function renderResultFiles($files)
     {
-        ?>
-        <div class="clearBoth"></div>
+        echo "
+        <div class='clearBoth'></div>
         <hr>
         <h2>Результаты:</h2>
-        <div>
-            <?
-            foreach ($files as $title => $string) {
-                echo '<div class="file">';
-                echo "<h2>$title</h2>";
-                echo '<pre>';
-                print_r($string);
-                echo '</pre>';
-                echo "</div>";
-            }
-            ?>
-        </div>
-        <?
-    }
-
-    /**
-     * Render result objects
-     * @param $object
-     */
-    protected function renderObject($object)
-    {
-        ?>
-        <div class="clearBoth"></div>
-        <hr>
-        <div>
-            <?
-            foreach ($object as &$item) {
-                echo '<div class="file">';
-                echo '<pre>';
-                print_r($item);
-                echo '</pre>';
-                echo '</div>';
-            }
-            ?>
-        </div>
-        <?
+        <div>";
+        foreach ($files as $title => $string) {
+            echo '<div class="file">';
+            echo "<h2>$title</h2>";
+            echo '<pre>';
+            print_r($string);
+            echo '</pre>';
+            echo "</div>";
+        }
+        echo "
+        </div>";
     }
 
     /**
@@ -148,22 +218,43 @@ class Common
      */
     private function renderClasses($classes)
     {
-        ?>
-        <div class="clearBoth"></div>
+        echo "
+        <div class='clearBoth'></div>
         <hr>
         <h2>Классы:</h2>
-        <div>
-            <?
-            foreach ($classes as $file => $string) {
-                echo '<div class="class">';
-                echo "<h3>$file</h3>";
-                echo '<pre>';
-                echo(htmlspecialchars($string));
-                echo '</pre>';
-                echo '</div>';
-            }
-            ?>
+        <div>";
+        foreach ($classes as $file => $string) {
+            echo '<div class="class">';
+            echo "<h3>$file</h3>";
+            echo '<pre>';
+            echo(htmlspecialchars($string));
+            echo '</pre>';
+            echo '</div>';
+        }
+        echo "
+        </div>";
+    }
+
+    /**
+     * Render result objects
+     * @param $object
+     */
+    protected function renderObject($object)
+    {
+        echo "
+        <div class='clearBoth'></div>
+        <hr>
+        <h2>Объект который получился в конце:</h2>
+        <div>";
+        foreach ($object as &$item) {
+            echo '<div class="file">';
+            echo '<pre>';
+            print_r($item);
+            echo '</pre>';
+            echo '</div>';
+        }
+        echo "
         </div>
-        <?
+        ";
     }
 }
