@@ -99,9 +99,9 @@ class Menu
             <!--            <li>-->
             <!--                <a href="proxy">2.10 Прокси (Proxy)</a>-->
             <!--            </li>-->
-            <!--            <li>-->
-            <!--                <a href="registry">2.11 Реестр (Registry)</a>-->
-            <!--            </li>-->
+                        <li>
+                            <a href="registry">2.11 Реестр (Registry)</a>
+                        </li>
         </ul>
 
         <h2>3. Поведенческие шаблоны проектирования (Behavioral)</h2>

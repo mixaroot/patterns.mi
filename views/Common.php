@@ -244,7 +244,7 @@ class Common
         echo "
         <div class='clearBoth'></div>
         <hr>
-        <h2>Объект который получился в конце:</h2>
+        <h2>Объекты которые получились в конце:</h2>
         <div>";
         foreach ($object as &$item) {
             echo '<div class="file">';

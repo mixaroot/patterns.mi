@@ -21,13 +21,13 @@ class Start implements Init
     public function init()
     {
         $ini = Config::exampleFiles()['ini'];
-        //Получаем единый екземпляр класса
+        //Получаем единый экземпляр класса
         $oIniFile = IniConfig::getInstance();
         //Передаем файл с настройками
         $oIniFile->setConfig($ini);
-        //Попытка уничтожить екземпляр клааса
+        //Попытка уничтожить экземпляр клааса
         unset($oIniFile);
-        //Снова получаем екземпляр класса, убеждаемся что установленный файл на месте
+        //Снова получаем экземпляр класса, убеждаемся что установленный файл на месте
         $oIniFile = IniConfig::getInstance();
         //Демонстрация результатов обработки файла паттерном Одиночка (Singleton)
         $view = new Common();
@@ -47,7 +47,7 @@ class Start implements Init
                 '/images/singleton.png'
             ],
             Files::renderClasses(Config::rootPath() . '/tests/tests/unit/', [
-                'SingletonTest.php',
+                'SingletonTest.php'
             ]),
             Files::getFiles(Config::exampleFiles(true, false, false)),
             [

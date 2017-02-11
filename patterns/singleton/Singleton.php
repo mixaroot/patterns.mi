@@ -2,7 +2,7 @@
 
 namespace patterns\singleton;
 /**
- * Трейт для создания singleton
+ * Трейт для реализации Одиночка (Singleton)
  * Class Singleton
  * @package patterns\singleton
  */
