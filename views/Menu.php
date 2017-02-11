@@ -131,9 +131,9 @@ class Menu
             <!--            <li>-->
             <!--                <a href="null-object">3.6 Объект Null (Null Object)</a>-->
             <!--            </li>-->
-            <!--            <li>-->
-            <!--                <a href="observer">3.7 Наблюдатель (Observer)</a>-->
-            <!--            </li>-->
+                        <li>
+                            <a href="observer">3.7 Наблюдатель (Observer)</a>
+                        </li>
             <!--            <li>-->
             <!--                <a href="specification">3.8 Спецификация (Specification)</a>-->
             <!--            </li>-->
