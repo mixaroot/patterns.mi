@@ -84,9 +84,9 @@ class Menu
             <!--            <li>-->
             <!--                <a href="decorator">2.5 Декоратор (Decorator)</a>-->
             <!--            </li>-->
-            <!--            <li>-->
-            <!--                <a href="dependency-injection">2.6 Внедрение Зависимости (Dependency Injection)</a>-->
-            <!--            </li>-->
+                        <li>
+                            <a href="dependency-injection">2.6 Внедрение Зависимости (Dependency Injection)</a>
+                        </li>
             <!--            <li>-->
             <!--                <a href="facade">2.7 Фасад (Facade)</a>-->
             <!--            </li>-->
