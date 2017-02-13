@@ -41,9 +41,9 @@ class Menu
             <!--            <li>-->
             <!--                <a href="factory-method">1.3 Фабричный Метод (Factory Method)</a>-->
             <!--            </li>-->
-            <!--            <li>-->
-            <!--                <a href="multiton">1.4 Пул одиночек (Multiton)</a>-->
-            <!--            </li>-->
+                        <li>
+                            <a href="multiton">1.4 Пул одиночек (Multiton)</a>
+                        </li>
             <!--            <li>-->
             <!--                <a href="pool">1.5 Объектный пул (Pool)</a>-->
             <!--            </li>-->

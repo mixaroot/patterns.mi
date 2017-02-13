@@ -9,6 +9,7 @@
     <file url="file://$PROJECT_DIR$/patterns/registry/Registry.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/patterns/registry/Start.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/patterns/registry/Xml.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/readme.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tests/tests/unit/RegistryTest.php" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

@@ -1,7 +1,7 @@
-Запуск всех тестов:
+РџСЂРёРјРµСЂ Р·Р°РїСѓСЃРє РІСЃРµС… С‚РµСЃС‚РѕРІ:
 codecept run -c d:\portfolio\soft\OpenServer\domains\patterns.mi\tests
-Генерация теста:
-codecept generate:cept acceptance Welcome -c d:\portfolio\soft\OpenServer\domains\patterns.mi\tests
+codecept run unit SingletonTest -c d:\portfolio\soft\OpenServer\domains\patterns.mi\tests
+РџСЂРёРјРµСЂ РіРµРЅРµСЂР°С†РёСЏ С‚РµСЃС‚Р°:
 codecept generate:phpunit unit Singleton -c d:\portfolio\soft\OpenServer\domains\patterns.mi\tests
-Создания пустой конфигурации тестов:
+РЎРѕР·РґР°РЅРёСЏ РїСѓСЃС‚РѕР№ РєРѕРЅС„РёРіСѓСЂР°С†РёРё С‚РµСЃС‚РѕРІ:
 codecept bootstrap d:\portfolio\soft\OpenServer\domains\patterns.mi\tests
