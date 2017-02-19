@@ -50,9 +50,9 @@ class Menu
             <!--            <li>-->
             <!--                <a href="prototype">1.6 Прототип (Prototype)</a>-->
             <!--            </li>-->
-            <!--            <li>-->
-            <!--                <a href="simple-factory">1.7 Простая Фабрика (Simple Factory)</a>-->
-            <!--            </li>-->
+                        <li>
+                            <a href="simple-factory">1.7 Простая Фабрика (Simple Factory)</a>
+                        </li>
             <li>
                 <a href="singleton">1.8 Одиночка (Singleton)</a>
             </li>
