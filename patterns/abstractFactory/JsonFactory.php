@@ -9,11 +9,11 @@ namespace patterns\abstractFactory;
 class JsonFactory extends AbstractFactory
 {
     /**
-     * @param $path
-     * @return Ini
+     * @param string $path
+     * @return Json
      * @inheritdoc
      */
-    public function workWithFile($path)
+    public function workWithFile(string $path): AbstractFiles
     {
         return new Json($path);
     }

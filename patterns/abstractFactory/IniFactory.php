@@ -9,11 +9,11 @@ namespace patterns\abstractFactory;
 class IniFactory extends AbstractFactory
 {
     /**
-     * @param $path
+     * @param string $path
      * @return Ini
      * @inheritdoc
      */
-    public function workWithFile($path)
+    public function workWithFile(string $path): AbstractFiles
     {
         return new Ini($path);
     }

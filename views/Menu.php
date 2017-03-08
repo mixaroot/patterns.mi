@@ -32,10 +32,10 @@ class Menu
             объекта
         </div>
         <ul>
-            <!--            <li>-->
-            <!--                <a href="abstract-factory">1.1 Абстрактная фабрика (Abstract Factory)</a>-->
-            <!--            </li>-->
-            <!--            <li>-->
+                        <li>
+                            <a href="abstract-factory">1.1 Абстрактная фабрика (Abstract Factory)</a>
+                        </li>
+<!--                        <li>-->
             <!--                <a href="builder">1.2 Строитель (Builder)</a>-->
             <!--            </li>-->
             <!--            <li>-->
@@ -53,12 +53,12 @@ class Menu
                         <li>
                             <a href="simple-factory">1.7 Простая Фабрика (Simple Factory)</a>
                         </li>
-            <li>
-                <a href="singleton">1.8 Одиночка (Singleton)</a>
-            </li>
-            <!--            <li>-->
-            <!--                <a href="static-factory">1.5 Статическая Фабрика (Static Factory)</a>-->
-            <!--            </li>-->
+                        <li>
+                            <a href="singleton">1.8 Одиночка (Singleton)</a>
+                        </li>
+                        <li>
+                            <a href="static-factory">1.5 Статическая Фабрика (Static Factory)</a>
+                        </li>
         </ul>
 
         <h2>2. Структурные шаблоны проектирования (Structural)</h2>

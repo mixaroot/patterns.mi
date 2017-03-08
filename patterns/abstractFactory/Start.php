@@ -8,6 +8,7 @@ use models\Files;
 use views\Common;
 
 /**
+ * Класс для демонстрации паттерна Абстрактная фабрика (Abstract Factory)
  * Class AbstractFactory
  * @package patterns\abstractFactory
  */
@@ -19,12 +20,6 @@ class Start implements Init
      */
     public function init()
     {
-
-        //TODO need example: create products with attribute
-        (new Common())->renderNotImplement();
-        return;
-
-
         // Factory for ini files
         $oFactoryIni = new IniFactory();
         $oIni = $oFactoryIni->workWithFile(Config::exampleFiles()['ini']);
@@ -40,12 +35,19 @@ class Start implements Init
         $xml = $oXml->getArray();
         // Render
         $view = new Common();
-        $view->render(
+        $view->renderResultObject(
             'Абстрактная фабрика (Abstract Factory)',
             'Создать ряд связанных или зависимых объектов без указания их конкретных классов.
             Обычно создаваемые классы стремятся реализовать один и тот же интерфейс.
             Клиент абстрактной фабрики не заботится о том, как создаются эти объекты, он просто знает, по каким
             признакам они взаимосвязаны и как с ними обращаться.',
+            [],
+            [
+                '/images/abstractFactory.png'
+            ],
+            Files::renderClasses(Config::rootPath() . '/tests/tests/unit/', [
+                'SimpleFactoryTest.php'
+            ]),
             Files::getFiles(Config::exampleFiles()),
             [
                 'Parsed ini file' => $ini,

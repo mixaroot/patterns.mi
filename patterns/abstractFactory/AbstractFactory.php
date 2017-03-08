@@ -10,8 +10,8 @@ abstract class AbstractFactory
 {
     /**
      * Create class for work with file some format
-     * @param $path
+     * @param string $path
      * @return mixed
      */
-    abstract public function workWithFile($path);
+    abstract public function workWithFile(string $path): AbstractFiles;
 }

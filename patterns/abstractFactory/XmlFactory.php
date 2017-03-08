@@ -9,11 +9,11 @@ namespace patterns\abstractFactory;
 class XmlFactory extends AbstractFactory
 {
     /**
-     * @param $path
-     * @return Ini
+     * @param string $path
+     * @return Xml
      * @inheritdoc
      */
-    public function workWithFile($path)
+    public function workWithFile(string $path): AbstractFiles
     {
         return new Xml($path);
     }
